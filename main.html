@@ -1,34 +1,11 @@
 <!DOCTYPE html>
-
 <html>
-
-<head>
-	<link rel="stylesheet" href="styles.css">
-</head>
-
-<body>
-	<!-- the entire body must be written by student -->
-  <div class="container">
-    <!-- Generating 800 boxes dynamically using JavaScript for brevity -->
-    <script>
-        const container = document.querySelector('.container');
-
-        for (let i = 0; i < 800; i++) {
-            const square = document.createElement('div');
-            square.classList.add('square');
-            container.appendChild(square);
-        }
-		() => {
-  cy.get(".square").eq(100).trigger("mouseover");
-  cy.get(".square").eq(101).trigger("mouseover");
-
-  // Use `not.have.css` for the expected absence of a CSS property
-  cy.get(".square").eq(100).should("not.have.css", "background-color", "rgb(29, 29, 29)");
-  cy.get(".square").eq(101).should("not.have.css", "background-color", "rgb(29, 29, 29)");
-
-  // Continue with other assertions
-};
-    </script>
-</body>
-
+  <head>
+    <title>Color Board</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div id="color-board"></div>
+    <script src="script.js"></script>
+  </body>
 </html>
