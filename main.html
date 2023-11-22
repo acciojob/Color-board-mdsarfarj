@@ -8,9 +8,17 @@
 
 <body>
 	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
-</script>
+  <div class="container">
+    <!-- Generating 800 boxes dynamically using JavaScript for brevity -->
+    <script>
+        const container = document.querySelector('.container');
 
+        for (let i = 0; i < 800; i++) {
+            const square = document.createElement('div');
+            square.classList.add('square');
+            container.appendChild(square);
+        }
+    </script>
 </body>
 
 </html>
