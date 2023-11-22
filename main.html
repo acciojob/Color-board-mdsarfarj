@@ -18,6 +18,16 @@
             square.classList.add('square');
             container.appendChild(square);
         }
+		() => {
+  cy.get(".square").eq(100).trigger("mouseover");
+  cy.get(".square").eq(101).trigger("mouseover");
+
+  // Use `not.have.css` for the expected absence of a CSS property
+  cy.get(".square").eq(100).should("not.have.css", "background-color", "rgb(29, 29, 29)");
+  cy.get(".square").eq(101).should("not.have.css", "background-color", "rgb(29, 29, 29)");
+
+  // Continue with other assertions
+};
     </script>
 </body>
 
