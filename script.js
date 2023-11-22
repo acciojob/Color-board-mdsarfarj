@@ -1,22 +1,30 @@
-//your JS code here. If required.
-const colorBoard = document.getElementById("color-board");
+document.addEventListener("DOMContentLoaded", function () {
+    const container = document.getElementById("color-board-container");
 
-for (let i = 0; i < 800; i++) {
-  const square = document.createElement("div");
-  square.className = "square";
-  colorBoard.appendChild(square);
+    // Generate 800 squares dynamically
+    for (let i = 0; i < 800; i++) {
+        const square = document.createElement('div');
+        square.classList.add('square');
+
+        // Add mouseover and mouseout event listeners
+        square.addEventListener("mouseover", handleMouseOver);
+        square.addEventListener("mouseout", handleMouseOut);
+
+        container.appendChild(square);
+    }
+});
+
+function handleMouseOver(event) {
+    // Change background color on hover
+    event.target.style.backgroundColor = 'lightcoral';
+
+    // Revert the color after 1 second
+    setTimeout(() => {
+        event.target.style.backgroundColor = 'lightblue';
+    }, 1000);
 }
 
-const handleMouseEnter = (e) => {
-  e.target.style.backgroundColor = "#fff";
-};
-
-const handleMouseLeave = (e) => {
-  e.target.style.backgroundColor = "#000";
-};
-
-for (let i = 0; i < 800; i++) {
-  const square = document.getElementsByClassName("square")[i];
-  square.addEventListener("mouseenter", handleMouseEnter);
-  square.addEventListener("mouseleave", handleMouseLeave);
+function handleMouseOut(event) {
+    // Revert the color on mouseout
+    event.target.style.backgroundColor = 'lightblue';
 }
